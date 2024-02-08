@@ -1,0 +1,35 @@
+.dialogs {
+    display: flex;
+    justify-content: space-around;
+}
+
+.dialogs__items {
+    padding: 10px;
+}
+
+.dialog_img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.dialog {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.dialog a{
+    padding-left: 10px;
+}
+
+.messages {
+    padding: 10px;
+}
+
+.message {
+    color:aliceblue;
+
+}

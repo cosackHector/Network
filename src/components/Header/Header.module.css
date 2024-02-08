@@ -1,0 +1,18 @@
+.app__header {
+    height: 70px;
+    grid-column: 1/-1;
+    background-color: greenyellow;
+}
+
+.app__header_logo {
+    width: 70px;
+    height: 70px;
+    margin-left: 20px;
+}
+
+.login {
+    color: black;
+    padding-right: 5px;
+    padding-top: 10px;
+    float: right;
+}

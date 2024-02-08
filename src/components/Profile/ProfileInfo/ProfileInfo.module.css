@@ -1,0 +1,24 @@
+.header_img{
+    width: 100%;
+    height: 100px;
+    border-radius: 20px;
+    margin-bottom: 50px;
+}
+
+.app__main_description_img {
+    width: 150px;
+    height: 150px;
+    border-radius: 0%;
+    padding-bottom: 30px;
+}
+
+.description {
+    align-self: center;
+    margin-right:  300px;
+}
+
+.app__main_description {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+}

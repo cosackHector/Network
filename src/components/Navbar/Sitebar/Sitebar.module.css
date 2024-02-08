@@ -1,0 +1,16 @@
+.sitebar {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.friends {
+    display: flex;
+    justify-content: space-between;
+}

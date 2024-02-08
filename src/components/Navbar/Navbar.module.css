@@ -1,0 +1,21 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav {
+    grid-row: 2/3;
+    background-color: greenyellow;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.item {
+    color: white;
+}
+
+.item a:active,
+.item a:focus {
+    font-weight: 700;
+    font-size: 16px;
+}
