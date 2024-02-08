@@ -32,14 +32,12 @@ class UsersContainer extends React.Component {
     render() {
         return <>
             {this.props.isFetching ? <Preloader /> : null}
-            <Users onChangeCurrentPage={this.onChangeCurrentPage}
+            <Users 
+                onChangeCurrentPage={this.onChangeCurrentPage}
                 usersCount={this.props.usersCount}
                 pageSize={this.props.pageSize}
                 users={this.props.users}
                 currentPage={this.props.currentPage}
-                follow={this.props.follow}
-                unFollow={this.props.unFollow}
-                toggleInFollowingProgress={this.props.toggleInFollowingProgress}
                 followingInProgress={this.props.followingInProgress} 
                 getFollow={this.props.getFollow}
                 getUnFollow={this.props.getUnFollow}/>
@@ -82,6 +80,10 @@ let mapStateToProps = (state) => {
 //     }
 // };
 
-export default connect(mapStateToProps, {
-    follow, unFollow, setCurrentPage, toggleInFollowingProgress, getUsers, getFollow, getUnFollow
-})(UsersContainer);
+export default connect(mapStateToProps, 
+    {
+    follow, unFollow, setCurrentPage, 
+    toggleInFollowingProgress,
+    getUsers, getFollow, getUnFollow
+    }
+)(UsersContainer);
