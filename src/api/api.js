@@ -11,10 +11,6 @@ export const userAPI = {
         const response = await instance.get(`users?page=${currentPage}&count=${pageSize}`);
         return response.data;
     },
-    async getNewUsers(pageNumber = 2, pageSize = 10) {
-        const response = await instance.get(`users?page=${pageNumber}&count=${pageSize}`);
-        return response.data;
-    },
     async getProfile(profileId) {
         const response = await instance.get(`profile/` + profileId);
         return response.data;
