@@ -16,7 +16,6 @@ let initialState = {
     profile: null,
     status: '',
 };
-
 const profileReducer = (state = initialState, action) => {
     switch(action.type) {
         case ADD_POST: 
@@ -50,7 +49,8 @@ const profileReducer = (state = initialState, action) => {
         }
     };
 
-//----------------------------------------------------------
+
+
 
     // THUNKS
 export const getUserProfile = (profileId) => (dispatch) => {
@@ -69,12 +69,12 @@ export const updateStatus = (status) => (dispatch) => {
     profileAPI.updateStatus(status)
         .then(data => {
             if(data.resultCode === 0) {
-            dispatch(setStatus(data.status))
+            dispatch(setStatus(status))
         }
     })
 };
 
-//----------------------------------------------------------
+
 
     // ACTION_CREATES
 export const addPostActionCreator = () => ({type: ADD_POST});
