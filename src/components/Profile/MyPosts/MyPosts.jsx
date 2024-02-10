@@ -4,7 +4,7 @@ import cl from './MyPosts.module.css';
 
 const MyPosts = (props) => {
 
-    let postsItem = props.posts.map(post => <Post message={post.post} likes={post.likes}/>);
+    let postsItem = props.posts.map(post => <Post message={post.post} likes={post.likes} key={post.id}/>);
     let newPost = React.createRef();
     
     let onAddPost = () => {

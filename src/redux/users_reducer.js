@@ -5,7 +5,7 @@ const UNFOLLOW = "UNFOLLOW";
 const SET_USERS = "SET_USERS";
 const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
 const SET_TOTAL_USERS_COUNT = "SET_TOTAL_USERS_COUNT";
-const TOGGLE_IS_FETCHiG = "TOGGLE_IS_FETCHiG";
+const TOGGLE_IS_FETCHING = "TOGGLE_IS_FETCHING";
 const TOGGLE_IS_FOLLOWING_PROGRESS = "TOGGLE_IS_FOLLOWING_PROGRESS";
 
 let initialState = {
@@ -48,7 +48,7 @@ const usersReducer = (state = initialState, action) => {
     case SET_TOTAL_USERS_COUNT: {
       return { ...state, usersCount: action.count };
     }
-    case TOGGLE_IS_FETCHiG: {
+    case TOGGLE_IS_FETCHING: {
       return { ...state, isFetching: action.isFetching };
     }
     case TOGGLE_IS_FOLLOWING_PROGRESS: {
@@ -56,8 +56,8 @@ const usersReducer = (state = initialState, action) => {
         ...state,
         followingInProgress: action.isFetching
           ? [...state.followingInProgress, action.userId]
-          : [state.followingInProgress.filter((id) => id != action.userId)],
-      };
+          : [...state.followingInProgress.filter((id) => id != action.userId)],
+      }
     }
     default:
       return state;
@@ -76,7 +76,7 @@ export const getUsers = (currentPage, pageSize) => {
 };
 export const getFollow = (userId) => {
   return (dispatch) => {
-    toggleInFollowingProgress(true, userId);
+    dispatch(toggleInFollowingProgress(true, userId));
     userAPI.unFollowing(userId).then((data) => {
       if (data.resultCode === 0) {
         dispatch(unFollow(userId));
@@ -87,7 +87,7 @@ export const getFollow = (userId) => {
 };
 export const getUnFollow = (userId) => {
   return (dispatch) => {
-    toggleInFollowingProgress(true, userId);
+    dispatch(toggleInFollowingProgress(true, userId));
     userAPI.following(userId).then((data) => {
       if (data.resultCode === 0) {
         dispatch(follow(userId));
@@ -96,11 +96,6 @@ export const getUnFollow = (userId) => {
     });
   };
 };
-
-
-
-
-
 
 
 // ACTION_CREATES
@@ -116,7 +111,7 @@ export const setTotalUsersCount = (totalUsersCount) => ({
   count: totalUsersCount,
 });
 export const setToggleIsFetching = (isFetching) => ({
-  type: TOGGLE_IS_FETCHiG,
+  type: TOGGLE_IS_FETCHING,
   isFetching,
 });
 export const toggleInFollowingProgress = (isFetching, userId) => ({

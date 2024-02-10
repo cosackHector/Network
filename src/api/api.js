@@ -12,12 +12,8 @@ export const userAPI = {
         return response.data;
     },
     async getProfile(profileId) {
-        const response = await instance.get(`profile/` + profileId);
-        return response.data;
-    },
-    async getAuth() {
-        const response = await instance.get(`auth/me`);
-        return response.data;
+        console.warn('Obsolete method. Please use profileAPI object.');
+        return profileAPI.getProfile(profileId);
     },
     async unFollowing(id) {
         const response = await instance.delete(`follow/${id}`);
@@ -25,6 +21,28 @@ export const userAPI = {
     },
     async following(id) {
         const response = await instance.post(`follow/${id}`, {});
+        return response.data;
+    },
+};
+
+export const profileAPI = {
+    async getProfile(profileId) {
+        const response = await instance.get(`profile/` + profileId);
+        return response.data;
+    },
+    async getStatus(userId) {
+        const response = await instance.get(`profile/status/` + userId);
+        return response.data;
+    },
+    async updateStatus(status) {
+        const response = await instance.put(`profile/status/`, {status: status});
+        return response.data;
+    },
+};
+
+export const authAPI = {
+    async me() {
+        const response = await instance.get(`auth/me`);
         return response.data;
     },
 };

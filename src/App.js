@@ -1,5 +1,4 @@
 import './App.css';
-import logo from './logo.svg';
 import React from 'react';
 import Navbar from './components/Navbar/Navbar'
 import ProfileContainer from './components/Profile/ProfileContainer';
@@ -10,6 +9,7 @@ import Musics from './components/Musics/Musics';
 import Settings from './components/Settings/Settings';
 import { Routes, Route } from 'react-router-dom';
 import HeaderContainer from './components/Header/HeaderContainer';
+import Login from './components/Login/Login';
 
 const App = (props) => {
   return ( 
@@ -24,6 +24,7 @@ const App = (props) => {
               <Route path='/news' element={<News/>}/>
               <Route path='/musics' element={<Musics/>}/>
               <Route path='/settings' element={<Settings/>}/>
+              <Route path='/login' element={<Login/>}/>
             </Routes>
           </div>
       </div>
