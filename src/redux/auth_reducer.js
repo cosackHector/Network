@@ -22,8 +22,7 @@ const authReducer = (state = initialState, action) => {
     }
 };
 
-export const getAuth = () => {
-    return (dispatch) => {
+export const getAuth = () => (dispatch) => {
         authAPI.me()
             .then(data => {
             if (data.resultCode === 0) {
@@ -31,8 +30,7 @@ export const getAuth = () => {
                 dispatch(setAuthUserData(id, email, login))
             }
         })
-    }
-};
+    };
 
 export const setAuthUserData = (id, email, login) => ({type: SET_USER_DATA, data: {id, email, login}});
 

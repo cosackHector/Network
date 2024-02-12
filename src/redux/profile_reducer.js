@@ -50,9 +50,7 @@ const profileReducer = (state = initialState, action) => {
     };
 
 
-
-
-    // THUNKS
+// THUNKS
 export const getUserProfile = (profileId) => (dispatch) => {
         userAPI.getProfile(profileId)
             .then(data => {
@@ -75,8 +73,7 @@ export const updateStatus = (status) => (dispatch) => {
 };
 
 
-
-    // ACTION_CREATES
+// ACTION_CREATES
 export const addPostActionCreator = () => ({type: ADD_POST});
 export const updateNewPostTextActionCreator = (text) =>({type: UPDATE_NEW_POST_TEXT, newText: text});
 export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile});

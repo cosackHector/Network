@@ -64,8 +64,9 @@ const usersReducer = (state = initialState, action) => {
   }
 };
 
-export const getUsers = (currentPage, pageSize) => {
-  return (dispatch) => {
+
+// THUNKS
+export const getUsers = (currentPage, pageSize) => (dispatch) => {
     setToggleIsFetching(true);
     userAPI.getUsers(currentPage, pageSize).then((data) => {
       dispatch(setToggleIsFetching(false));
@@ -73,9 +74,7 @@ export const getUsers = (currentPage, pageSize) => {
       dispatch(setTotalUsersCount(data.totalCount));
     });
   };
-};
-export const getFollow = (userId) => {
-  return (dispatch) => {
+export const getFollow = (userId) => (dispatch) => {
     dispatch(toggleInFollowingProgress(true, userId));
     userAPI.unFollowing(userId).then((data) => {
       if (data.resultCode === 0) {
@@ -84,9 +83,7 @@ export const getFollow = (userId) => {
       }
     });
   };
-};
-export const getUnFollow = (userId) => {
-  return (dispatch) => {
+export const getUnFollow = (userId) => (dispatch) => {
     dispatch(toggleInFollowingProgress(true, userId));
     userAPI.following(userId).then((data) => {
       if (data.resultCode === 0) {
@@ -95,7 +92,6 @@ export const getUnFollow = (userId) => {
       }
     });
   };
-};
 
 
 // ACTION_CREATES
