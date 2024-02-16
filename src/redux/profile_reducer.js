@@ -51,26 +51,20 @@ const profileReducer = (state = initialState, action) => {
 
 
 // THUNKS
-export const getUserProfile = (profileId) => (dispatch) => {
-        userAPI.getProfile(profileId)
-            .then(data => {
-                dispatch(setUserProfile(data))
-        })
+export const getUserProfile = (profileId) => async (dispatch) => {
+    const data = await userAPI.getProfile(profileId)
+        dispatch(setUserProfile(data))
     };
-export const getStatus = (profileId) => (dispatch) => {
-    profileAPI.getStatus(profileId)
-        .then(data => {
-            dispatch(setStatus(data))
-    })
-};
-export const updateStatus = (status) => (dispatch) => {
-    profileAPI.updateStatus(status)
-        .then(data => {
+export const getStatus = (profileId) => async (dispatch) => {
+    const data = await profileAPI.getStatus(profileId)
+        dispatch(setStatus(data))
+    };
+export const updateStatus = (status) => async (dispatch) => {
+    const data = await profileAPI.updateStatus(status)
             if(data.resultCode === 0) {
-            dispatch(setStatus(status))
+                dispatch(setStatus(status))
         }
-    })
-};
+    };  
 
 
 // ACTION_CREATES

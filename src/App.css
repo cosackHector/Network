@@ -1,14 +1,22 @@
 .app__wrapper {
-  margin: 5px auto;
+  margin: 50px auto;
   width: 1400px;
   display: grid;
-  grid-template-columns: 1fr 6fr;
+  grid-template-columns: 1fr 15fr;
   gap: 5px;
 }
 
 .app__wrapper_content {
+  width: 100%;
+  border-radius: 5px;
   grid-row: 2/3;
-  background-color: #4fd3ea;
+}
+
+.header__container {
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  position: fixed;
 }
 /*------------------------------*/
 /* 

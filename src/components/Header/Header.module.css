@@ -1,7 +1,8 @@
 .app__header {
-    height: 70px;
+    margin-top: 0;
+    height: 50px;
     grid-column: 1/-1;
-    background-color: greenyellow;
+    background-color: rgb(47, 189, 255);
 }
 
 .app__header_logo {

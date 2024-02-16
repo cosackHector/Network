@@ -1,21 +1,36 @@
 a {
     text-decoration: none;
     color: black;
+    font-size: 12px;
 }
 
 .nav {
+    width: 50px;
     grid-row: 2/3;
-    background-color: greenyellow;
+    background-color: #f9f5f5;
     overflow: hidden;
     padding: 20px;
+    border-radius: 10px;
 }
 
 .item {
     color: white;
+    /* background-color: #cac8c8;
+    border-radius: 50%; */
 }
 
 .item a:active,
 .item a:focus {
     font-weight: 700;
     font-size: 16px;
+}
+
+.icons {
+    transition: transform 0.3s;
+    width: 15px;
+    height: 15px;
+}
+
+.icons:hover {
+    transform: scale(1.4);
 }

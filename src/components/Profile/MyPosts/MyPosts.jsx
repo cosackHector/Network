@@ -1,8 +1,9 @@
 import React from 'react';
+import { memo } from 'react';
 import Post from './Post/Post';
 import cl from './MyPosts.module.css';
 
-const MyPosts = (props) => {
+const MyPosts = memo(props => {
 
     let postsItem = props.posts.map(post => <Post message={post.post} likes={post.likes} key={post.id}/>);
     let newPost = React.createRef();
@@ -28,9 +29,9 @@ const MyPosts = (props) => {
                 <button onClick={onAddPost}>Add post</button>
             </div>
             <div className={cl.posts}>
-                {postsItem}
+                {postsItem.reverse()}
             </div>
         </div>
-    )};
+    )});
 
     export default MyPosts;
