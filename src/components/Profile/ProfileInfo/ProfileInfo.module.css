@@ -1,7 +1,8 @@
 .profileInfo__container {
     display: flex;
     height: 350px;
-    background-color: #bcbbbb;
+    background-color: #cbcbcb;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     margin: 10px 10px;
 }

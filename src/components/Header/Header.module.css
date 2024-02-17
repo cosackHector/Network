@@ -2,13 +2,7 @@
     margin-top: 0;
     height: 50px;
     grid-column: 1/-1;
-    background-color: rgb(47, 189, 255);
-}
-
-.app__header_logo {
-    width: 70px;
-    height: 70px;
-    margin-left: 20px;
+    background-color: rgba(47, 189, 255, 0.8);
 }
 
 .login {

@@ -46,6 +46,7 @@ class App extends React.Component {
               </Routes>
             </Suspense>
             </section>
+          <Navbar />
         </div>
       </main>
       )

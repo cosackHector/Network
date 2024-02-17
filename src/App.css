@@ -1,15 +1,18 @@
+.app__container {
+  overflow: hidden;
+  background-color: #cecdcd;
+}
+
 .app__wrapper {
   margin: 50px auto;
-  width: 1400px;
-  display: grid;
-  grid-template-columns: 1fr 15fr;
+  display: flex;
   gap: 5px;
 }
 
 .app__wrapper_content {
-  width: 100%;
+  margin: 0 auto;
+  width: 1300px;
   border-radius: 5px;
-  grid-row: 2/3;
 }
 
 .header__container {
@@ -18,6 +21,15 @@
   width: 100%;
   position: fixed;
 }
+
+
+/* Убрать скрол */
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+
 /*------------------------------*/
 /* 
 

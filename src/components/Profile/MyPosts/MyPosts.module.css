@@ -1,5 +1,9 @@
 .postsBlock {
     padding-left: 10px;
+    background-color: #cbcbcb;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    grid-column: 2/4;
 }
 
 .posts {

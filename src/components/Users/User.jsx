@@ -4,12 +4,13 @@ import { NavLink } from 'react-router-dom';
 
 const User = ({user, followingInProgress, getFollow, getUnFollow}) => {
     return (
-        <div key={user.id}>
-            <span>
-                <div >
+        <section key={user.id} className={c.user__list}>
+            <div>
+                <div>
                     <NavLink to={'/profile/' + user.id}>
                         <img className={c.avatar} src={user.photos.small != null ? user.photos.small : userPhoto} />
                     </NavLink>
+                    <div>{user.name}</div>
                 </div>
                 <div>
                     {user.followed
@@ -20,18 +21,17 @@ const User = ({user, followingInProgress, getFollow, getUnFollow}) => {
                             disabled={followingInProgress.some(id => id === user.id)}
                             onClick={() => { getUnFollow(user.id) }}>FOLLOW</button>}
                 </div>
-            </span>
-            <span>
+            </div>
+            <div>
                 <span>
-                    <div>{user.name}</div>
                     <div>{user.status}</div>
                 </span>
                 <span>
-                    <div>{'user.location.country'}</div>
-                    <div>{'user.location.city'}</div>
+                    <div>{'Страна'}</div>
+                    <div>{'Город'}</div>
                 </span>
-            </span>
-        </div>
+            </div>
+        </section>
     )};
 
 export default User;

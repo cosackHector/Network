@@ -1,0 +1,15 @@
+.profileBlockRight__container {
+    margin: 0 10px;
+    background-color: #cfcbcb;
+    border-radius: 10px;
+    grid-column: 1/2;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.profileBlockLeft__container {
+    margin: 0 10px;
+    background-color: #cfcbcb;
+    border-radius: 10px;
+    grid-column: 4/5;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}

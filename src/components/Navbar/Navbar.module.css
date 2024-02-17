@@ -5,32 +5,34 @@ a {
 }
 
 .nav {
-    width: 50px;
-    grid-row: 2/3;
-    background-color: #f9f5f5;
-    overflow: hidden;
-    padding: 20px;
-    border-radius: 10px;
+    /* position: fixed; */
+    margin-top: 10px;
+    padding-top: 10px;
+    width: 30px;
+    height: 230px;
+    border-radius: 30px;
+    background-color: #eceaea;
+    box-shadow: 1px 5px 10px 1px rgba(0, 0, 0, 0.5);
 }
 
 .item {
-    color: white;
-    /* background-color: #cac8c8;
-    border-radius: 50%; */
-}
-
-.item a:active,
-.item a:focus {
-    font-weight: 700;
-    font-size: 16px;
+    text-align: center;
+    border-radius: 50%;
 }
 
 .icons {
     transition: transform 0.3s;
     width: 15px;
     height: 15px;
+    padding-bottom: 20px;
 }
 
 .icons:hover {
     transform: scale(1.4);
 }
+
+/* .item a:active,
+.item a:focus {
+    font-weight: 700;
+    font-size: 16px;
+} */

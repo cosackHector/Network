@@ -6,7 +6,6 @@ const instance = axios.create({
     baseURL: 'https://social-network.samuraijs.com/api/1.0/',
 });
 
-
 export const userAPI = {
     async getUsers(currentPage = 1, pageSize = 10) {
         const response = await instance.get(`users?page=${currentPage}&count=${pageSize}`);
@@ -36,6 +35,16 @@ export const profileAPI = {
     },
     async updateStatus(status) {
         const response = await instance.put(`profile/status/`, {status: status});
+        return response.data;
+    },
+    async savePhoto(photoFile) {
+        const formData = new FormData()
+        formData.append('image', photoFile)
+        const response = await instance.put(`profile/photo/`, formData, {
+            headers: {
+                "Content-Type": "multipart/form-data",
+            }
+        });
         return response.data;
     },
 };
