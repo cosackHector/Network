@@ -3,7 +3,6 @@ import './App.css';
 import { lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { compose } from 'redux';
 import { initializeApp } from './redux/app_reducer';
 import { Suspense } from 'react';
@@ -27,28 +26,26 @@ class App extends React.Component {
       return <Preloader />
     }
     return (
-      <main className='app__container'>
-        <header className='header__container'>
-          <HeaderContainer />
-        </header>
-        <div className = 'app__wrapper'>
+      <div>
+        <HeaderContainer />
+        <div className = 'app_container'>
           <Navbar />
-            <section className='app__wrapper_content'>
-            <Suspense fallback={<div><Preloader /></div>}>
-              <Routes>
-                <Route path='/dialogs/*' element={<DialogsContainer store={this.props.store}/>}/>
-                <Route path='/profile/:profileId?' element={<ProfileContainer store={this.props.store}/>}/>
-                <Route path='/users' element={<UsersContainer/>}/>
-                <Route path='/news' element={<News/>}/>
-                <Route path='/musics' element={<Musics/>}/>
-                <Route path='/settings' element={<Settings/>}/>
-                <Route path='/login' element={<Login/>}/>
-              </Routes>
-            </Suspense>
-            </section>
+            <main className='content_container'>
+              <Suspense fallback={<div><Preloader /></div>}>
+                <Routes>
+                  <Route path='/dialogs/*' element={<DialogsContainer store={this.props.store}/>}/>
+                  <Route path='/profile/:profileId?' element={<ProfileContainer store={this.props.store}/>}/>
+                  <Route path='/users' element={<UsersContainer />}/>
+                  <Route path='/news' element={<News/>}/>
+                  <Route path='/musics' element={<Musics/>}/>
+                  <Route path='/settings' element={<Settings/>}/>
+                  <Route path='/login' element={<Login/>}/>
+                </Routes>
+              </Suspense>
+            </main>
           <Navbar />
         </div>
-      </main>
+      </div>
       )
     }
   };

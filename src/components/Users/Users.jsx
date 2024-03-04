@@ -4,13 +4,7 @@ import style from './Users.module.css'
 
 const Users = (props) => {
     return (
-        <div key={222} className={style.users_list__wrapper}>
-            <Paginator 
-                onChangeCurrentPage={props.onChangeCurrentPage}
-                currentPage={props.currentPage}
-                totalItemsCount={props.usersCount}
-                pageSize={props.pageSize}
-            />
+        <div key='users' className={style.users_list__wrapper}>
             {props.users
                 .map(user => <User
                     user={user}
@@ -18,6 +12,12 @@ const Users = (props) => {
                     getFollow={props.getFollow}
                     getUnFollow={props.getUnFollow}/>
                 )}
+            <Paginator 
+                onChangeCurrentPage={props.onChangeCurrentPage}
+                currentPage={props.currentPage}
+                totalItemsCount={props.usersCount}
+                pageSize={props.pageSize}
+            />
         </div>)
 }
 

@@ -5,9 +5,13 @@ import Message from './Message/Message';
 const Dialogs = (props) => {
     
     let state = props.dialogsPage;
-    let dialogsElements = state.dialogs.map(dialog => <DialogItem name={dialog.name} key={dialog.id} id={dialog.id}/>);
-    let messagesElements = state.messages.map(message => <Message message ={message.message} key={message.id}/>);
     let newMassageBody = state.newMassageBody;
+
+    let dialogsElements = state.dialogs
+        .map(dialog => <DialogItem key={dialog.id} name={dialog.name} id={dialog.id}/>);
+    let messagesElements = state.messages
+        .map(message => <Message key={message.id} message ={message.message}/>);
+
 
     let addMassage = () => {
         props.sendMassage()
@@ -19,7 +23,7 @@ const Dialogs = (props) => {
     };
 
     return (
-        <div className={c.dialogs}>
+        <section className={c.dialogs}>
             <div className={c.dialogs__items}>
                 {dialogsElements}
             </div>
@@ -37,7 +41,7 @@ const Dialogs = (props) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 

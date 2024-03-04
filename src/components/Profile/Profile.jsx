@@ -12,11 +12,11 @@ const Profile = (props) => {
                 profile={props.profile} status={props.status}
                 updateStatus={props.updateStatus} isOwner={props.isOwner}
                 savePhoto={props.savePhoto} />
-            <section className={style.profile__items}>
+            <div className={style.profile__items}>
                 <ProfileBlockRight  />
                 <MyPostsContainer store={props.store}/>
                 <ProfileBlockLeft />
-            </section>
+            </div>
         </section>
     )};
 

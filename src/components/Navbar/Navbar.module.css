@@ -6,12 +6,12 @@ a {
 
 .nav {
     /* position: fixed; */
-    margin-top: 10px;
+    margin: 10px 5px;
     padding-top: 10px;
     width: 30px;
     height: 230px;
     border-radius: 30px;
-    background-color: #eceaea;
+    background-color: #f9f7f7;
     box-shadow: 1px 5px 10px 1px rgba(0, 0, 0, 0.5);
 }
 
@@ -21,7 +21,7 @@ a {
 }
 
 .icons {
-    transition: transform 0.3s;
+    transition: transform 0.1s;
     width: 15px;
     height: 15px;
     padding-bottom: 20px;
